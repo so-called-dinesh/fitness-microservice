@@ -1,4 +1,4 @@
-🚀 Enterprise AI-Powered Microservices Platform
+Enterprise AI-Powered Microservices Platform
 📖 Executive Summary
 An enterprise-grade, distributed microservices application engineered to deliver AI-driven capabilities at scale. Built with Java and Spring Boot, this platform leverages an Event-Driven Architecture via Apache Kafka for asynchronous processing, robust security using Keycloak (OAuth2/OIDC), and seamless cloud deployment on AWS.
 
