@@ -29,5 +29,10 @@ eureka:
     prefer-ip-address: true
     hostname: 127.0.0.1
 
+gemini:
+  api:
+    url: ${GEMINI_URL}
+    key: ${GEMINI_KEY}
+
 server:
   port: 8083
