@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface RecommendationRepo extends MongoRepository<Recommendations, String> {
+
     @Nullable List<Recommendations> findAllById(String userId);
 
     @Nullable
