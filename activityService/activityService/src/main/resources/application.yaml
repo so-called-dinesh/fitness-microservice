@@ -3,7 +3,7 @@ spring:
     name: activityService
   data:
     mongodb:
-      uri: mongodb://localhost:27017/ActivityDB
+      uri: mongodb://localhost:27017/microFitness/ActivityDB
       database: ActivityDB
   kafka:
     bootstrap-servers: localhost:9092

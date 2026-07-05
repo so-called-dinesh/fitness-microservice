@@ -3,8 +3,8 @@ spring:
     name: aiService
   data:
     mongodb:
-      uri: mongodb://localhost:27017/airecommendationfitness
-      database: airecommendationfitness
+      uri: mongodb://localhost:27017/microFitness/aiRecommendationFitness
+      database: aiRecommendationFitness
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
