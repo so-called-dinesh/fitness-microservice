@@ -15,14 +15,16 @@ spring:
               uri: lb://USER-SERVICE
               predicates:
                 - Path=/api/users/**
+
             - id: activity-service
               uri: lb://ACTIVITY-SERVICE
               predicates:
                 - Path=/api/activities/**
+
             - id: ai-service
               uri: lb://AI-SERVICE
               predicates:
-                - Path=/api/activities/**
+                - Path=/api/recommendations/**
 logging:
   level:
     org.springframework.cloud.gateway: TRACE
