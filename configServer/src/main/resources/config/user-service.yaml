@@ -23,5 +23,10 @@ eureka:
   instance:
     prefer-ip-address: true
     hostname: 127.0.0.1
+
+logging:
+  level:
+    com.fitness.userService: DEBUG
+
 server:
   port: 8081
