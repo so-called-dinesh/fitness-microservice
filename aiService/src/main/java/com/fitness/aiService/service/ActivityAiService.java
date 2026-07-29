@@ -40,10 +40,7 @@ public class ActivityAiService {
                     .get(0)
                     .path("text");
 
-            String jsonContent = textNode.asText()
-                    .replaceAll("```\\n", "")
-                    .replaceAll("\\n```", "")
-                    .trim();
+            String jsonContent = extractJson(textNode.asText());
 
             JsonNode analysisJson = mapper.readTree(jsonContent);
             JsonNode  analysisNode = analysisJson.path("analysis");
@@ -138,6 +135,25 @@ public class ActivityAiService {
                     .append(analysisNode.path(key).asText())
                     .append("\n\n");
         }
+    }
+
+    private String extractJson(String text) {
+        // Strip markdown code fences like ```json ... ``` and any leading language tag.
+        String stripped = text.trim();
+        int firstFence = stripped.indexOf("```");
+        if (firstFence >= 0) {
+            int afterFence = stripped.indexOf('\n', firstFence);
+            if (afterFence < 0) {
+                stripped = stripped.substring(firstFence + 3);
+            } else {
+                stripped = stripped.substring(afterFence + 1);
+            }
+            int lastFence = stripped.lastIndexOf("```");
+            if (lastFence >= 0) {
+                stripped = stripped.substring(0, lastFence);
+            }
+        }
+        return stripped.trim();
     }
 
     private String createPromptForActivity(Activity activity) {
