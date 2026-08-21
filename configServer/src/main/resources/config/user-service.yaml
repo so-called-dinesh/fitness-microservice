@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/fitness_user_db
+    url: jdbc:postgresql://localhost:5432/fitness_user_db
     username: postgres
-    password: 1508
+    password: 1234
     driver-class-name: org.postgresql.Driver
 
   jpa:
